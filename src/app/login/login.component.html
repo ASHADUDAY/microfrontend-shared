@@ -1,0 +1,101 @@
+
+<div *ngIf="loaderShow" class="loader-login">
+  <img  src="../assets/images/Flathourglass.gif" alt="">
+</div>
+<div *ngIf="!loaderShow">
+  
+<!-- <div class="col-md-12 logo-login">
+  <img src="../assets/images/logo.png" alt="">
+</div> -->
+
+<div class="bg-image">
+  <img class="login-img"  src="../assets/images/ship.png" alt="">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="login-form">  
+          <div class="logo-login">
+            <img src="../assets/images/logo.png" alt="">
+          </div>
+          <form  [formGroup]="loginForm" (ngSubmit)="login()" *ngIf="showLoginForm && !showRegistrationForm && !showForgotForm " >
+            <h1>Login</h1>
+            <div class="content">
+              <div class="input-field">
+                <input type="email" placeholder="Email"  formControlName="username" autocomplete="nope" required>
+                <!-- <mat-error *ngIf="loginForm.get('username')?.hasError('required')">Username is required.</mat-error>           -->
+              </div>
+              <div class="input-field">
+                <input type="password" placeholder="Password" formControlName="password" required autocomplete="new-password">
+                <!-- <mat-error *ngIf="loginForm.get('password')?.hasError('required')"> Password is required.</mat-error> -->
+              </div>
+              <a href="#" class="link">Forgot Your Password?</a>
+            </div>
+            <div class="action">
+              <button>Register</button>
+              <button type="submit">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>
+
+<!-- partial -->
+
+<form [formGroup]="registrationForm" *ngIf="showRegistrationForm">
+  <div class="row">
+  <mat-form-field class="w-40">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="First Name" formControlName="firstName" required>
+  </mat-form-field>
+  <mat-form-field class="w-40">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Last Name" formControlName="lastName" required>
+  </mat-form-field>
+  </div>
+
+  <mat-form-field class="w-80">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email" required>
+  </mat-form-field>
+
+  <mat-form-field class="w-40">
+      <mat-label>Comapany Name</mat-label>
+      <input matInput placeholder="Company" formControlName="company" required>
+  </mat-form-field>
+  <mat-form-field class="w-40">
+      <mat-label>Country</mat-label>
+      <input matInput placeholder="Country" formControlName="country" required>
+  </mat-form-field>
+
+  <mat-form-field class="w-80">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Password" formControlName="password"required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="register()" [disabled]="!registrationForm.valid">Register</button>
+<br> <br>
+<a (click)="showLoginForm = true; showRegistrationForm = false;">
+  <h3 >Go to Login</h3>
+</a>
+
+</form>
+
+<!-- Forgot Form -->
+
+<form [formGroup]="forgotForm" *ngIf="showForgotForm">
+  <mat-form-field class="w-100">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter You email" formControlName="email" type="email" required>
+      <mat-error *ngIf="forgotForm.get('email')?.hasError('required')">
+          Email is required.
+      </mat-error>
+      <mat-error *ngIf="forgotForm.get('email')?.hasError('email')">
+          Please enter a valid email address.
+      </mat-error>              
+      </mat-form-field>            
+    <button mat-raised-button color="primary" (click)="forgotPassword()">Reset Password</button>
+</form>
+</div>

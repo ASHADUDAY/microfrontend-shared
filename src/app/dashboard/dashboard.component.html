@@ -1,0 +1,29 @@
+<div class="main-container1">
+  <div class="flags-container">
+    <div *ngFor="let filer of filersList; track: $index">
+      <!-- <mat-card class="flags-card cursor" appearance="outlined" routerLink="/prefiler-ui/filer-details"> -->
+      <mat-card
+        class="flags-card cursor"
+        style="height: 100%"
+        appearance="out"
+        (click)="handleFilerClick(filer)"
+        [routerLink]="filer.hasModal ? null : filer.route"
+      >
+        <mat-card-header>
+          <mat-card-title class="fw-700 fs-30">{{
+            filer.title
+          }}</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div>
+            <img
+              [src]="'../assets/images/' + filer.icon + '.svg'"
+              alt="{{ filer.icon }}"
+            />
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

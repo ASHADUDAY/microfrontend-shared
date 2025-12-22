@@ -1,0 +1,495 @@
+/* dashboard -css start */
+
+.shared_dashboard .text-center {
+  text-align: center;
+}
+
+.shared_dashboard .wrap {
+  background: #ffffff;
+  box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 15px 25px 15px;
+  height: 100%;
+  cursor: pointer;
+  margin: 40px 0 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 48px;
+  color: #660066;
+}
+.shared_dashboard .wrap:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  content: "";
+}
+
+.shared_dashboard .wrap:after {
+  background: #003399;
+}
+
+.shared_dashboard .flex-row {
+  display: flex;
+  justify-content: center;
+  /* gap: 2rem; */
+  margin: 3rem;
+}
+
+/* .basic-container {
+  padding: 64px 64px 400px 64px;
+} */
+.shared_dashboard .version-info {
+  font-size: 8pt;
+  float: right;
+  padding: 8px;
+}
+
+.shared_dashboard .sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.shared_dashboard .sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.shared_dashboard .sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.shared_dashboard .main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .shared_dashboard .sidenav {
+    padding-top: 15px;
+  }
+  .shared_dashboard .sidenav a {
+    font-size: 18px;
+  }
+}
+.shared_dashboard .right_icon.right-icon {
+  position: absolute;
+  right: 25px;
+  font-size: 1.5rem;
+  top: 1.5rem;
+}
+.shared_dashboard .childMenu {
+  display: none;
+}
+.shared_dashboard .open-card .childMenu {
+  display: block;
+}
+.shared_dashboard .flex-content {
+  display: flex;
+}
+/* dashboard css end */
+
+/* header nav scc start */
+
+.shared_header .header-nav {
+  /* background-color: #003399 !important; */
+  background-image: url("/assets/images/Breadcrumb.svg") !important;
+  box-shadow: 0px 1px 4px #0000001a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+  flex-wrap: nowrap;
+  margin: 10px;
+  border-radius: 10px;
+}
+.shared_header .navbar form {
+  float: right;
+}
+.shared_header .navbar form select {
+  width: auto;
+}
+.shared_header .navbar .collapse:not(.show) {
+  display: block;
+}
+.shared_header .sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /* background-color: #003399; */
+  background-color: #ffdd00;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 1rem;
+}
+
+.shared_header .sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.shared_header .openbtn {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  background: transparent;
+  color: #fff;
+}
+
+.shared_header #main {
+  transition: margin-left 0.5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .shared_header .sidebar {
+    padding-top: 15px;
+  }
+  .shared_header .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/* Add an active class to the active dropdown button */
+.shared_header .activeMenu {
+  background-color: #ddd;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.shared_header .dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.shared_header .sidenav-item ul {
+  background: #ffdd00;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+.shared_header .sidenav-item ul li {
+  /* border-top: 1px solid #5048481a; */
+}
+.shared_header .sidenav-item ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.shared_header .sidebar-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+}
+.shared_header .sidenav-item ul li a {
+  position: relative;
+  color: #003399;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+/* .sidenav-item ul li.active a{
+  color: cyan;
+  background: #1e1e1e;
+  border-left-color: cyan;
+} */
+
+.shared_header .dropdown_arrow {
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 50%;
+}
+.shared_header.openSidebar .sidebar {
+  width: 250px;
+  z-index: 99;
+}
+.shared_header.openSidebar .main-content {
+  margin-left: 250px;
+}
+.shared_header .childMenu {
+  display: none;
+}
+.shared_header .open-card .childMenu {
+  display: block;
+}
+.shared_header .right_icon.right-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 1.5rem;
+}
+.shared_header .sidebar .wrap {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  justify-content: space-between;
+  color: white;
+  background-color: #034ea2;
+  border-radius: 12px;
+  width: 85%;
+  margin: 1rem;
+}
+/* .shared_header .m-r-1{ */
+/* margin-right: 1rem; */
+/* } */
+.shared_header .m-l-2 {
+  margin-left: 2rem;
+}
+
+/*  profile css */
+.selected-btn {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  justify-content: start;
+  color: white;
+  background-color: #034ea2;
+  border-radius: 12px;
+  width: 85%;
+  margin-left: 1rem;
+}
+
+.unSelected-btn {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  justify-content: start;
+  background-color: #ffdd00;
+  width: 85%;
+  margin-left: 1rem;
+  color: #242220;
+}
+
+/* menu toggle */
+
+.shared_header .menu-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shared_header .menu-toggle::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 4px;
+  background: #fff;
+  box-shadow: 0 8px 0 #fff, 0 -8px 0 #fff;
+}
+
+/* profile menu */
+
+.shared_header .profile {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: end;
+}
+
+.shared_header .profile p {
+  line-height: 1;
+  font-size: 14px;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.shared_header .profile .img-box .mat-icon {
+  position: relative;
+  width: 35px;
+  height: 100%;
+  border-radius: 50%;
+  font-size: 2.25rem;
+  overflow: hidden;
+}
+.shared_header .profile .img-box {
+  display: flex;
+}
+/* menu (the right one) */
+
+.shared_header .menu {
+  position: absolute;
+  top: calc(100% + 24px);
+  right: 16px;
+  width: 200px;
+  padding: 0;
+  /* min-height: 100px; */
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: 300ms;
+}
+
+.shared_header .menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.shared_header .menu.active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  z-index: 999;
+}
+
+/* menu links */
+
+.shared_header .menu ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  background: #fff;
+  padding: 0;
+}
+
+.shared_header .menu ul li {
+  list-style: none;
+}
+
+.shared_header .menu ul li:hover {
+  background: #eee;
+}
+
+.shared_header .menu ul li a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  gap: 6px;
+}
+
+.shared_header .menu ul li a i {
+  font-size: 1.2em;
+}
+.shared_header .font-12 {
+  font-size: 0.75rem;
+}
+.shared_header .user {
+  text-align: center;
+  margin: 0 0 0 0.75rem;
+}
+.shared_header .d-none {
+  display: none;
+}
+.shared_header .user h6 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+
+/* header nav css end */
+
+/* child component css */
+
+.child_shared_item .childElem {
+  background: #ffdd00;
+  border-top: 1px solid #fff;
+  cursor: pointer;
+  /* box-shadow: 2px 10px 20px #0000001a; */
+  color: #003399;
+}
+.child_shared_item .childElem .mat-icon {
+  margin-right: 1rem;
+}
+.child_shared_item .childElem span {
+  font-size: 1rem;
+}
+.child_shared_item .right-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 1.5rem;
+}
+
+.child_shared_item .childMenu2 {
+  display: none;
+}
+.child_shared_item .childMenu2 span {
+  font-size: 1rem;
+}
+.child_shared_item .open-card .childMenu2 {
+  display: block;
+}
+.child_shared_item .p--5 {
+  padding: 1rem 1.5rem;
+  display: flex;
+}
+
+/* child component end */
+
+.cursor {
+  cursor: pointer;
+}
+/* Ensure dialog always centers and overlays everything */
+
+::ng-deep .cdk-overlay-container {
+  z-index: 2000 !important; /* higher than toolbars, sidenavs, etc. */
+}
+
+::ng-deep .cdk-overlay-pane {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+::ng-deep .custom-dialog-container .mat-mdc-dialog-container {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  max-width: 40vw !important;
+  position: absolute;
+  margin: -30% !important;
+  margin-left: 35% !important;
+}
+::ng-deep .cdk-overlay-pane {
+  transform: translate(-50%, -50%) !important;
+}

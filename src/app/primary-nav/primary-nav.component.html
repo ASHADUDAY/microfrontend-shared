@@ -1,0 +1,84 @@
+
+
+<div class="main-header shared_header">
+  <div class="sidebar">
+    <!-- <mat-icon class="close-icon cursor"(click)="openNav()">backspace</mat-icon> -->
+
+    <div class="sidenav-item">
+       <div class="logo-container">
+        <div class="logo">
+         <img src="/assets/images/ECU_Worldwide_Logo.PNG" alt="" style="width: 100%; height: 100%;">
+       </div>
+       </div>
+      <ul>
+        <li *ngFor="let item of navItems; let i = index" [ngClass]="{'open-card': item.openCardFlag == true}">
+          <div >
+            <div *ngIf="item.children && item.children.length > 0" style="width: 256px; height: 56px;" >
+              <div color="primary" [ngClass]="{'selected-btn': btnSelected, 'unSelected-btn': !btnSelected }" style="justify-content: space-around;"  (click) = "openCard($event , i)">
+                <div style="display: flex;" [routerLink]="item.route" (click)="selectPrefiler($event)">
+                  <mat-icon [svgIcon]="item.iconName" style="display: flex;"></mat-icon>
+                <span style="margin-left: 0.75rem;">
+                  {{ lang == 'spanish' ? item.displayEsName : item.displayName}}
+                </span>
+                </div>
+                <mat-icon class="right-icon m-l-2">{{item.openCardFlag == true ? "expand_less" : "expand_more" }}</mat-icon> 
+              </div>
+              <app-child-item 
+                #menu 
+                [items]="item.children" 
+                [lang] ='lang' 
+                [btnSelected] = "btnSelected"
+                class="childMenu"  
+                (selectedBtn)="handleSelectedBtn($event)"
+                ></app-child-item>
+              </div>
+            <div *ngIf="!item.children || item.children.length === 0" style="width: 256px; height: 56px;">
+              <div color="primary" class="selected-btn" (click) = "openCard($event , i)">
+                <div style="display: flex;">
+                  <mat-icon [svgIcon]="item.iconName" style="display: flex;"></mat-icon>
+                <span style="margin-left: 0.75rem;">
+                  {{ lang == 'spanish' ? item.displayEsName : item.displayName}}
+                </span>
+                </div>
+                <mat-icon class="right-icon m-r-1">{{item.openCardFlag == true ? "expand_less" : "expand_more" }}</mat-icon> 
+              </div>
+            </div>
+          </div></li>
+      </ul>
+    </div>
+    
+  </div>
+  
+  <div class="main-content   mr-3">
+    <nav class="navbar navbar-expand-lg navbar-light header-nav">
+      <div class="menu-toggle openbtn" (click)="openNav()"></div>
+    
+      <div class="collapse navbar-collapse user-block" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+        <div class="profile">
+          <div class="user">
+            <h6>Test User</h6>
+            <p>400391</p>
+          </div>
+          <div class="img-box">
+            <mat-icon>account_circle</mat-icon>
+          </div>
+        </div>
+        <div class="menu">
+          <ul>
+            <!-- <li><a href="#"><i class="ph-bold ph-user"></i>&nbsp;Profile</a></li>
+            <li><a href="#"><i class="ph-bold ph-envelope-simple"></i>&nbsp;Inbox</a></li>
+            <li><a href="#"><i class="ph-bold ph-gear-six"></i>&nbsp;Settings</a></li>
+            <li><a href="#"><i class="ph-bold ph-question"></i>&nbsp;Help</a></li> -->
+            <li><a type="button" (click)="logout()"><i class="ph-bold ph-sign-out"></i>&nbsp;Sign Out</a></li>
+          </ul>
+        </div>
+        </form>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+

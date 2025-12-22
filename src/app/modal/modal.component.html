@@ -1,0 +1,36 @@
+<div class="search-filters">
+  <div class="modal-banner">
+    {{ modalHeader }}
+    <mat-icon class="cursor" (click)="onCloseClick()" style="float: right"
+      >close</mat-icon
+    >
+  </div>
+  <div class="searchFilter" *ngIf="callType === 'SA-Filer'">
+    <mat-dialog-content class="py-0">
+      <div class="row d-flex flex-column gap-4 p-4">
+        <div>Please select a service to submit your EDI documents to:</div>
+        <div class="d-flex align-items-center justify-content-around m-4">
+          <div
+            class="status-cards"
+            *ngFor="let menu of data.filerRoutes; track: $index"
+          >
+            <mat-card
+              class="flags-card cursor"
+              appearance="out"
+              [routerLink]="menu.route"
+            >
+              <!-- (click)="handleFilerClick(filer)" -->
+              <!-- <mat-card class="status-card" appearance="outlined"> -->
+              <div class="fw-600 count d-flex align-items-center">
+                <img [src]="'../assets/images/' + menu.icon + '.png'" alt="" />
+              </div>
+            </mat-card>
+            <!-- } -->
+          </div>
+        </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="row" style="justify-content: space-evenly">
+    </mat-dialog-actions>
+  </div>
+</div>

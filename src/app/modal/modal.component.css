@@ -1,0 +1,19 @@
+.modal-banner {
+  height: 60px;
+  color: #ffffff;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  background-image: url("/assets/images/Breadcrumb.svg");
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.search-filters {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.status-cards {
+  height: 7rem;
+  width: 10rem;
+}

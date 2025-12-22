@@ -1,0 +1,29 @@
+.logo {
+    background: white;
+    width: 12rem;
+    height: 6rem;
+    border-radius: 10px;
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+
+.sidebar .close-icon{
+    position: absolute;
+    right: -3px;
+    color: #FFFFFF;
+}
+
+.top-bar{
+    margin-left: .75rem;
+}
+
+.user-block{
+    display: inline-block !important;
+}

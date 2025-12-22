@@ -1,0 +1,88 @@
+<!-- <div class="Container">
+  <div class="row">
+    <div class="col-md-3">
+      <mat-menu #childMenu="matMenu" [overlapTrigger]="false">
+        <span *ngFor="let child of items">
+          <span *ngIf="child.children && child.children.length > 0">
+            <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
+              <mat-icon>{{child.iconName}}</mat-icon>
+              <span>{{child.displayName}}</span>
+            </button>
+            <app-child-item #menu [items]="child.children"></app-child-item>
+          </span>
+          <span *ngIf="!child.children || child.children.length === 0">
+            <button mat-menu-item [routerLink]="child.route">
+              <mat-icon>{{child.iconName}}</mat-icon>
+              <span>{{child.displayName}}</span>
+            </button>
+          </span>
+        </span>
+      </mat-menu>
+    </div>
+  </div>
+</div> -->
+
+<div class="child_shared_item">
+  <div *ngFor="let child of items; let i = index">
+    <!-- Handle branch node menu items -->
+
+    <div
+      *ngIf="child.children && child.children.length > 0"
+      [ngClass]="{ 'open-card': child.openCardFlag == true }"
+      class="childElem"
+      (click)="openCard($event, i)"
+    >
+      <div class="p--5">
+        <span>{{
+          lang == "spanish" ? child.displayEsName : child.displayName
+        }}</span>
+        <mat-icon class="right-icon">{{
+          child.openCardFlag == true
+            ? "remove_circle_outline"
+            : "add_circle_outline"
+        }}</mat-icon>
+      </div>
+      <app-child-item
+        #menu
+        [items]="child.children"
+        [lang]="lang"
+        class="childMenu2"
+      ></app-child-item>
+    </div>
+    <!-- Handle leaf node menu items -->
+    <div
+      *ngIf="!child.children || child.children.length == 0"
+      class="childElem p--5"
+      [routerLink]="child.route"
+      (click)="emitSelected(i)"
+      style="
+        border-bottom: 3px solid black;
+        margin-left: 2rem;
+        margin-right: 2rem;
+      "
+    >
+      <div
+        color="primary"
+        [ngClass]="{
+          'selected-btn': selectedSubmenuIndex === i,
+          'unSelected-btn': selectedSubmenuIndex !== i
+        }"
+        style="width: 125px"
+      >
+        <!-- <mat-icon
+          [svgIcon]="child.iconName"
+          style="display: flex; margin-right: 0.5rem"
+        ></mat-icon> -->
+        <!-- <mat-icon class="right-icon">{{child.iconName}}</mat-icon> -->
+        <img
+          [src]="'/assets/images/' + child.iconName + '.svg'"
+          alt="icon"
+          style="display: flex; margin-right: 0.5rem"
+        />
+        <span>{{
+          lang == "spanish" ? child.displayEsName : child.displayName
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>

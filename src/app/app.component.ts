@@ -1,13 +1,26 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Event, NavigationStart, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
+  selector: 'navbar-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'microfrontend-shared';
+  constructor(public router : Router){
+this.router.events.subscribe((event:Event)=>{
+  if(event instanceof NavigationStart){
+ if(event.url == "/login" || event.url == "/"){
+  this.userLoggedIn = false;
+ }
+ else{
+  this.userLoggedIn = true;
+ }
+  }
+})
+  }
+  title = 'navbar';
+  userLoggedIn : boolean = false;
+
+
 }

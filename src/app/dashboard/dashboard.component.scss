@@ -1,0 +1,38 @@
+@import '../../styles/colors/colors.scss';
+.main-container1{
+    .flags-container {
+      padding: 1.5rem;    
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      
+
+      .flags-card{
+        border: none;
+        padding: 0.5rem;
+        border: 1px solid $light-border;
+        background-color: $light-blue;
+        box-shadow: #42474C0D 0px 1px 3px, #42474C52 0px 1px 2px;
+
+
+         .mat-mdc-card-content{
+        text-align: center;
+        div{
+          margin: 1rem auto;
+          width: 100%;
+          object-fit: cover;
+           img{
+            width: 100%;
+           }
+        }
+    }
+      }
+
+      .mat-mdc-card-header{
+        margin: 0 auto;
+      }
+    }
+    mat-divider{
+      border-color : $light-divider;
+    }
+}
