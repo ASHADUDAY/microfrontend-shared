@@ -110,7 +110,7 @@
 
 .shared_header .header-nav {
   /* background-color: #003399 !important; */
-  background-image: url("/assets/images/Breadcrumb.svg") !important;
+  background-image: url("/assets/icons/Breadcrumb.svg") !important;
   box-shadow: 0px 1px 4px #0000001a;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   color: #fff;
